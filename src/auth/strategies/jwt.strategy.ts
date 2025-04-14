@@ -13,7 +13,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   }
 
   validate(payload: any) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    return payload; // payload becomes `request.user`
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+    return { _id: payload.sub, email: payload.email }; // payload becomes `request.user`
   }
 }

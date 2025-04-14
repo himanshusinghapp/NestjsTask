@@ -5,10 +5,12 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { KafkaModule } from './kafka/kafka.module';
 import { KafkaConsumerController } from './kafka/kafka.consumer';
+import { PostModule } from './post/post.module';
 
 @Module({
   imports: [
     KafkaModule,
+    PostModule,
     MongooseModule.forRoot('mongodb://localhost/NestProject'),
     ConfigModule.forRoot({ isGlobal: true }),
     UserModule,
